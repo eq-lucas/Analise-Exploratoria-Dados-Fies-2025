@@ -27,5 +27,4 @@ dfzao[filtrob][['ID do estudante','Renda mensal bruta per capita']]
 
 # %%
 df[filtro][['ID do estudante','Renda mensal bruta per capita']]
-
 # %%
