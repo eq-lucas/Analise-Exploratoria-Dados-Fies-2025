@@ -68,18 +68,10 @@ Depois, instale as dependências do projeto:
 ```bash
 pip install -r requirements.txt
 ```
- 
----
-
-3. **Download dos Arquivos** 
-
-1. Acesse o [Portal de Dados Abertos do MEC](https://dadosabertos.mec.gov.br/fies).  
-2. Baixe os arquivos `.csv` correspondentes a **Inscrições** e **Ofertas**, período **2019-2021**.  
-3. Salve todos os arquivos na pasta `Downloads` do seu computador.
 
 ---
 
-4. **Preparação e Limpeza Inicial**  
+3. **Preparação e Limpeza Inicial**  
 
 
 1. Mova os arquivos `.csv` da pasta `Downloads` para a **raiz do projeto**.  
@@ -100,7 +92,7 @@ Este script realiza:
 '<ano>_ofertas_<semestre>_sem_duplicata.csv'
 
 
-## 5. Próximos Passos
+4. **Próximos Passos**
 
 Após a limpeza, os arquivos já estão prontos para serem utilizados
 
