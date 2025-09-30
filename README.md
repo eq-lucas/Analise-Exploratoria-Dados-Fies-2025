@@ -75,7 +75,7 @@ pip install -r requirements.txt
 3. **Preparação e Limpeza Inicial**  
 
 
-1. Mova os arquivos `.csv` da pasta baixados para a **raiz do projeto**.  
+1. Mova os arquivos `.csv` baixados para a **raiz do projeto**.  
 2. Execute o script de pipeline_inicial.py de renomeação/movimentação  
 
 
