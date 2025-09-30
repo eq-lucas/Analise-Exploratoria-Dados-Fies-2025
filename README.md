@@ -70,13 +70,13 @@ pip install -r requirements.txt
    - Baixe os arquivos `.csv`.
    - Foram considerados os arquivos de **Inscrições** e **Ofertas**, no período de **2019 a 2021**.
 
-
+---
 
 3. **Preparação e Limpeza Inicial**  
 
 
 1. Mova os arquivos `.csv` baixados para a **raiz do projeto**.  
-2. Execute o script de pipeline_inicial.py de renomeação/movimentação  
+2. Execute o script de pipeline_inicial.py de renomeação/movimentação/correção
 
 
 Este script realiza:  
