@@ -89,9 +89,10 @@ Este script realiza:
 - Remove linhas duplicadas.  
 - Salva os arquivos limpos em `planilhas/bruto/fonte/sem_duplicata` no formato:
 
-'<ano>_inscricoes_<semestre>_sem_duplicata.csv'
-'<ano>_ofertas_<semestre>_sem_duplicata.csv'
+- '<ano>_inscricoes_<semestre>_sem_duplicata.csv'
+- '<ano>_ofertas_<semestre>_sem_duplicata.csv'
 
+---
 
 4. **Próximos Passos**
 
