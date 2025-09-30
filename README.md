@@ -50,7 +50,7 @@ A organização das pastas garante que o pipeline de dados seja reproduzido de f
 
 2. **Ambiente e Dependência**
 
-Para rodar a análise, recomenda-se criar um ambiente virtual e instalar as dependências listadas em requirements.txt`:
+Para rodar a análise, recomenda-se criar um ambiente virtual e instalar as dependências listadas em `requirements.txt`:
 
 Na raiz do projeto, execute:
 
