@@ -41,14 +41,7 @@ A organização das pastas garante que o pipeline de dados seja reproduzido de f
 
 ## Como Replicar a Análise
 
-1. **Download dos Dados Brutos**  
-
-   - Acesse o [Portal de Dados Abertos do MEC](https://dadosabertos.mec.gov.br/fies).  
-   - Baixe os arquivos `.csv`.
-   - Foram considerados os arquivos de **Inscrições** e **Ofertas**, no período de **2019 a 2021**.
-
-
-2. **Ambiente e Dependência**
+1. **Ambiente e Dependência**
 
 Para rodar a análise, recomenda-se criar um ambiente virtual e instalar as dependências listadas em `requirements.txt`:
 
@@ -71,10 +64,18 @@ pip install -r requirements.txt
 
 ---
 
+2. **Download dos Dados Brutos**  
+
+   - Acesse o [Portal de Dados Abertos do MEC](https://dadosabertos.mec.gov.br/fies).  
+   - Baixe os arquivos `.csv`.
+   - Foram considerados os arquivos de **Inscrições** e **Ofertas**, no período de **2019 a 2021**.
+
+
+
 3. **Preparação e Limpeza Inicial**  
 
 
-1. Mova os arquivos `.csv` da pasta `Downloads` para a **raiz do projeto**.  
+1. Mova os arquivos `.csv` da pasta baixados para a **raiz do projeto**.  
 2. Execute o script de pipeline_inicial.py de renomeação/movimentação  
 
 
