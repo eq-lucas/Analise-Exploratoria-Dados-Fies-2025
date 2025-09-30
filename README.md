@@ -35,7 +35,7 @@ A organização das pastas garante que o pipeline de dados seja reproduzido de f
 │   ├── limpo/                # Dados normalizados (colunas, tipos, nomes)
 │   └── processado/           # Dados prontos para análise (ETL aplicado)
 │
-└── pipeline_inicial.py/       # Instruções iniciais
+└── pipeline_inicial.py/      # Instruções iniciais
 ```
 ---
 
