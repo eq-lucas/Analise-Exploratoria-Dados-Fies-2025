@@ -1,4 +1,4 @@
 venv
 *.csv
 *.xlsx
-extras
+# qndo tiver tudo pronto fazer gitignore da pasta extras
