@@ -30,30 +30,34 @@ path = '../../../planilhas/limpo/modulo_1/inscricao/'
 arquivo= 'fies_{semestre}_inscricao_{year}_limpo.csv'
 
 
+caminho_externo= f'../../../planilhas/externo/df_mestre_cadastro_cursos_2016_2024.csv'
+
+df_externo_cine= pd.read_csv(caminho_externo,encoding='utf-8-sig',low_memory=False)
+
+colunas_cine= [
+'NO_CURSO',
+'CO_CURSO',
+# 'NO_CINE_ROTULO',
+# 'CO_CINE_ROTULO',
+'CO_CINE_AREA_GERAL',
+'NO_CINE_AREA_GERAL',
+# 'CO_CINE_AREA_ESPECIFICA',
+# 'NO_CINE_AREA_ESPECIFICA',
+# 'CO_CINE_AREA_DETALHADA',
+# 'NO_CINE_AREA_DETALHADA',
+]
+
+# 1. Ordena por ano (assume que 'NU_ANO_CENSO' existe no seu .csv mestre)
+df_mestre_deduplicado = df_externo_cine.sort_values(by='NU_ANO_CENSO', ascending=True)
+    
+    # 2. Remove duplicados em 'CO_CURSO', mantendo o último (mais recente)
+df_mestre_deduplicado = df_mestre_deduplicado.drop_duplicates(subset=['CO_CURSO'], keep='last')
+
+df_mestre_deduplicado = df_mestre_deduplicado[colunas_cine]
+
 
 for ano in anos:
 
-
-    caminho_externo= f'../../../planilhas/externo/MICRODADOS_CADASTRO_CURSOS_{ano}.CSV'
-
-
-    df_externo_cine= pd.read_csv(caminho_externo,encoding='latin-1',sep=';',low_memory=False)
-
-
-    colunas_cine= [
-        'NO_CURSO',
-        'CO_CURSO',
-        # 'NO_CINE_ROTULO',
-        # 'CO_CINE_ROTULO',
-         'CO_CINE_AREA_GERAL',
-         'NO_CINE_AREA_GERAL',
-        # 'CO_CINE_AREA_ESPECIFICA',
-        # 'NO_CINE_AREA_ESPECIFICA',
-        # 'CO_CINE_AREA_DETALHADA',
-        # 'NO_CINE_AREA_DETALHADA',
-            ]
-
-    df_externo = df_externo_cine[colunas_cine]
 
 
     for semestre in semestres:
@@ -70,7 +74,7 @@ for ano in anos:
 
         df_mergiado= pd.merge(
             df_temp,
-            df_externo,
+            df_mestre_deduplicado,
             how='left',
             left_on='codigo_curso_inscricao',
             right_on='CO_CURSO',
