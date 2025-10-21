@@ -9,3 +9,5 @@ import pandas as pd
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 
+path_save= '../../../planilhas/limpo/modulo_2/inscritos_coluna_filtro_renda/inscritos_filtro_renda.csv'
+
