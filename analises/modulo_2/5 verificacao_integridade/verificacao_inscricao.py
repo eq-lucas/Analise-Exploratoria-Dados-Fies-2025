@@ -2,7 +2,7 @@
 import pandas as pd
 import os
 
-path='planilhas/limpo/modulo_2/inscritos_coluna_filtro_renda/1 inscritos_coluna_passou_peneira_renda.csv'
+path='../../../planilhas/limpo/modulo_2/inscritos_coluna_filtro_renda/1 inscritos_coluna_passou_peneira_renda.csv'
 
 
 PK= [
@@ -49,4 +49,19 @@ if qtde_linhas_antes != qtde_linhas_depois:
         print(f'depois: {qtde_linhas_depois}\n')
 
 
+# --- Bloco de Verificação de Colunas ---
+print("\n--- Verificando Nomes e Total de Colunas ---")
+
+# Pega a lista de colunas
+lista_colunas = df_limpo.columns.to_list()
+total_colunas = len(lista_colunas)
+
+print(f"Total de colunas: {total_colunas}\n")
+print("Nomes das colunas:")
+
+# Imprime uma por linha para facilitar a leitura
+for coluna in lista_colunas:
+    print(coluna)
+
+print("--- Fim da Verificação de Colunas ---")
 # %%

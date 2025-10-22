@@ -68,7 +68,7 @@ dfo = pd.read_csv(pathof)
 
 dfo=dfo[colunas_necessarias_ofertas].copy()
 
-
+print('comecando merge')
 # Realiza o merge
 df_verificar = df.merge(
     right=dfo,
@@ -77,18 +77,29 @@ df_verificar = df.merge(
     how='left',
     #suffixes=('', '_oferta') # <-- A SOLUÇÃO ESTÁ AQUI
 )  
+print('fim do merge')
+
+
+print('comecando filtro')
 
 # Cria o filtro para encontrar inconsistências
 filtro_verificar = (df_verificar['possivel_candidato'] == 'P-FIES') & ((df_verificar['participa_p_fies_ofertas'] == 'NAO') | (df_verificar['participa_p_fies_ofertas'].isna()))
+print('fim filtro')
+
+
+
+print('comecando ajuste')
 
 # APLICA O FILTRO CORRETO (filtro_verificar)
 df_verificar.loc[filtro_verificar, 'possivel_candidato'] = 'eliminado'
+print('fim ajuste')
 
-display(df_verificar)#type: ignore
 
 df_final = df_verificar[df.columns.to_list()]
 
 
+display(df_final.shape)#type: ignore
+# %%
 df_final.to_csv(path_save,index=False)
 
 
