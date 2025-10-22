@@ -106,7 +106,11 @@ mapa_nomes_curto = {
 # --- 3. PROCESSAMENTO ---
 print(f"Lendo arquivo de ofertas: {path_leitura_ofertas}")
 
+
+
 df_ofertas = pd.read_csv(path_leitura_ofertas, low_memory=False) # Adicionado low_memory=False
+
+df_ofertas= df_ofertas.drop(columns=['limite_temp']).copy()
 
 print("Renomeando colunas...")
 df_ofertas_renomeado = df_ofertas.rename(columns=mapa_nomes_curto)
@@ -122,4 +126,9 @@ print("\n--- Processo Concluído (Ofertas) ---")
 print("\nNovos nomes de colunas:")
 print(df_ofertas_renomeado.columns.to_list())
 
+
+pd.set_option('display.max_rows', None) # Para mostrar todos os nomes
+pd.set_option('display.max_columns', None)
+
+display(df_ofertas_renomeado.head())#type: ignore
 # %%
