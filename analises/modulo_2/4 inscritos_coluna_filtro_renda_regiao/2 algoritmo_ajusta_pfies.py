@@ -12,9 +12,9 @@ import os
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 
-path_save= '../../../planilhas/limpo/modulo_2/inscritos_coluna_filtro_renda/ajustado_fies_pfies_inscritos.csv'
+path_save= '../../../planilhas/limpo/modulo_2/inscritos_coluna_filtro_renda_regiao/ajustado_fies_pfies_inscritos.csv'
 
-path_inscritos= '../../../planilhas/limpo/modulo_2/inscritos_coluna_filtro_renda/1 inscritos_coluna_passou_peneira_renda.csv'
+path_inscritos= '../../../planilhas/limpo/modulo_2/inscritos_coluna_filtro_renda_regiao/1 inscritos_coluna_passou_peneira_renda.csv'
 
 pathof = '../../../planilhas/limpo/modulo_2/ajustar_nan_cine_ofertas/ofertas_agrupado_limpo_CORRIGIDO.csv'
 
@@ -22,7 +22,7 @@ pathof = '../../../planilhas/limpo/modulo_2/ajustar_nan_cine_ofertas/ofertas_agr
 
 df = pd.read_csv(path_inscritos)
 
-#filtro_elegiveis = (df['possivel_candidato'] == 'FIES') | (df['possivel_candidato'] == 'P-FIES')
+#filtro_elegiveis = (df['modalidade_fies'] == 'Modalidade II') | (df['modalidade_fies'] == 'Modalidade III (P-FIES)')
 
 #df = df[filtro_elegiveis].copy()
 
@@ -83,7 +83,7 @@ print('fim do merge')
 print('comecando filtro')
 
 # Cria o filtro para encontrar inconsistências
-filtro_verificar = (df_verificar['possivel_candidato'] == 'P-FIES') & ((df_verificar['participa_p_fies_ofertas'] == 'NAO') | (df_verificar['participa_p_fies_ofertas'].isna()))
+filtro_verificar = (df_verificar['modalidade_fies'] == 'Modalidade III (P-FIES)') & ((df_verificar['participa_p_fies_ofertas'] == 'NAO') | (df_verificar['participa_p_fies_ofertas'].isna()))
 print('fim filtro')
 
 
@@ -91,7 +91,7 @@ print('fim filtro')
 print('comecando ajuste')
 
 # APLICA O FILTRO CORRETO (filtro_verificar)
-df_verificar.loc[filtro_verificar, 'possivel_candidato'] = 'eliminado'
+df_verificar.loc[filtro_verificar, 'modalidade_fies'] = 'eliminado'
 print('fim ajuste')
 
 
@@ -99,7 +99,7 @@ df_final = df_verificar[df.columns.to_list()]
 
 
 display(df_final.shape)#type: ignore
-# %%
+
 df_final.to_csv(path_save,index=False)
 
 

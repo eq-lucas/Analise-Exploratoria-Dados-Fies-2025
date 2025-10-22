@@ -8,7 +8,7 @@ pd.set_option('display.max_columns', None)
 # --- 1. CAMINHOS ---
 
 # Caminho de LEITURA (o arquivo que você quer renomear)
-path_leitura_ofertas= '../../../planilhas/limpo/modulo_2/inscritos_coluna_filtro_renda/ajustado_fies_pfies_inscritos.csv'
+path_leitura_ofertas= '../../../planilhas/limpo/modulo_2/inscritos_coluna_filtro_renda_regiao/ajustado_fies_pfies_inscritos.csv'
 
 # Caminho de SAÍDA (onde salvar o arquivo com nomes novos)
 path_salvar_ofertas = '../../../planilhas/limpo/modulo_3/limpar_e_padronizar_colunas/inscritos_limpo.csv'
@@ -100,7 +100,6 @@ mapa_nomes_curto = {
     'CO_CINE_AREA_GERAL': 'codigo_cine_area_geral',
     'NO_CINE_AREA_GERAL': 'nome_cine_area_geral',
 
-    'possivel_candidato': 'peneira_renda_per_capita',
 }
 
 # --- 3. PROCESSAMENTO ---
@@ -110,7 +109,7 @@ print(f"Lendo arquivo de ofertas: {path_leitura_ofertas}")
 
 df_ofertas = pd.read_csv(path_leitura_ofertas, low_memory=False) # Adicionado low_memory=False
 
-df_ofertas= df_ofertas.drop(columns=['limite_temp']).copy()
+#df_ofertas= df_ofertas.drop(columns=['limite_temp']).copy()
 
 print("Renomeando colunas...")
 df_ofertas_renomeado = df_ofertas.rename(columns=mapa_nomes_curto)

@@ -2,7 +2,7 @@
 import pandas as pd
 import os
 
-path='../../../planilhas/limpo/modulo_2/inscritos_coluna_filtro_renda/1 inscritos_coluna_passou_peneira_renda.csv'
+path='../../../planilhas/limpo/modulo_2/inscritos_coluna_filtro_renda_regiao/1 inscritos_coluna_passou_peneira_renda.csv'
 
 
 PK= [
