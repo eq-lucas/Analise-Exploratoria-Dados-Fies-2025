@@ -98,7 +98,9 @@ mapa_nomes_curto = {
     'NO_CURSO': 'nome_curso_cine',
     'CO_CURSO': 'codigo_curso_cine',
     'CO_CINE_AREA_GERAL': 'codigo_cine_area_geral',
-    'NO_CINE_AREA_GERAL': 'nome_cine_area_geral'
+    'NO_CINE_AREA_GERAL': 'nome_cine_area_geral',
+
+    'possivel_candidato': 'peneira_renda_per_capita',
 }
 
 # --- 3. PROCESSAMENTO ---
