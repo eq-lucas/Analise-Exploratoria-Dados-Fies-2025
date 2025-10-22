@@ -104,16 +104,52 @@ df_ofertas_renomeado = df_ofertas.rename(columns=mapa_nomes_curto)
 # Cria o diretório se ele não existir
 os.makedirs(os.path.dirname(path_salvar_ofertas), exist_ok=True)
 
+
+
+# criacao da coluna de regiao
+
+# Mapeamento UF -> Região
+mapa_uf_regiao = {
+    'AC': 'Norte', 'AP': 'Norte', 'AM': 'Norte', 'PA': 'Norte', 'RO': 'Norte', 'RR': 'Norte', 'TO': 'Norte',
+    'AL': 'Nordeste', 'BA': 'Nordeste', 'CE': 'Nordeste', 'MA': 'Nordeste', 'PB': 'Nordeste', 'PE': 'Nordeste', 'PI': 'Nordeste', 'RN': 'Nordeste', 'SE': 'Nordeste',
+    'DF': 'Centro-Oeste', 'GO': 'Centro-Oeste', 'MT': 'Centro-Oeste', 'MS': 'Centro-Oeste',
+    'ES': 'Sudeste', 'MG': 'Sudeste', 'RJ': 'Sudeste', 'SP': 'Sudeste',
+    'PR': 'Sul', 'RS': 'Sul', 'SC': 'Sul'
+}
+
+coluna_uf_ies = 'uf_ies' # Nome da coluna APÓS a renomeação
+
+
+df_ofertas_renomeado_e_coluna_regiao=df_ofertas_renomeado.copy()
+
+
+df_ofertas_renomeado_e_coluna_regiao['regiao_ies']=df_ofertas_renomeado_e_coluna_regiao['uf_ies'].map(mapa_uf_regiao)
+
+# 1. Verifica quantos valores ficaram NaN (UFs inválidas)
+num_nan = df_ofertas_renomeado_e_coluna_regiao['regiao_ies'].isna().sum()
+
+# 2. Imprime o resultado correto
+if num_nan > 0:
+    print(f"   -> Aviso: {num_nan} ofertas tinham UF inválida ou faltante, resultando em 'regiao_ies' NaN.")
+else:
+    print("   -> Coluna 'regiao_ies' adicionada com sucesso e sem valores inválidos.")
+
+
+
+
+
+
+
 print(f"Salvando arquivo renomeado em: {path_salvar_ofertas}")
-df_ofertas_renomeado.to_csv(path_salvar_ofertas, index=False)
+df_ofertas_renomeado_e_coluna_regiao.to_csv(path_salvar_ofertas, index=False)
 
 print("\n--- Processo Concluído (Ofertas) ---")
 
 print("\nNovos nomes de colunas:")
-print(df_ofertas_renomeado.columns.to_list())
+print(df_ofertas_renomeado_e_coluna_regiao.columns.to_list())
 
 pd.set_option('display.max_rows', None) # Para mostrar todos os nomes
 pd.set_option('display.max_columns', None)
 
-display(df_ofertas_renomeado.head())#type: ignore
+display(df_ofertas_renomeado_e_coluna_regiao.head())#type: ignore
 # %%
