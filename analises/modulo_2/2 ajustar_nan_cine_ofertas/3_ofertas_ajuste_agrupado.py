@@ -266,6 +266,60 @@ mapa_correcao_manual_ofertas = {
     'ENGENHARIA DE SEGURANÇA NO TRABALHO': ('VERIFICAR MANUALMENTE', 'XX'), # Não encontrado no auxiliar
     'COMUNICAÇÃO SOCIAL - CINEMA E VÍDEO': ('VERIFICAR MANUALMENTE', 'XX'), # Não encontrado no auxiliar
     'PRODUÇÃO DE GRAFOS': ('VERIFICAR MANUALMENTE', 'XX'), # Não encontrado no auxiliar
+
+
+
+
+
+    # adicionado apos executar modulo3-> verificacao cursos nan, entao refeito todos csv do modulo 2 em diante( poucos refeitos)
+
+    # --- NOVOS CURSOS (Da sua lista de 59 NaNs) ---
+    'CIÊNCIAS DA COMPUTAÇÃO': ('Computação e Tecnologias da Informação e Comunicação (TIC)', '06'),
+    'ENGENHARIA': ('Engenharia, produção e construção', '07'), # Geralmente o campo ENGENHARIA sem detalhe cai em 07
+    'BIOLOGIA': ('Ciências naturais, matemática e estatística', '05'), # Assumindo Bacharelado/Licenciatura
+    'LETRAS PORTUGUÊS E INGLÊS': ('Educação', '01'),
+    'ENGENHARIA DE ENERGIAS': ('Engenharia, produção e construção', '07'),
+    'PRODUÇÃO DE GRÃOS': ('Agricultura, silvicultura, pesca e veterinária', '08'),
+    'INTERDISCIPLINAR EM CIÊNCIA E TECNOLOGIA': ('Ciências naturais, matemática e estatística', '05'), # Cursos Interdisciplinares caem em 05 ou 02, escolhemos 05.
+    'TECNOLOGIA E DESIGN DE NEGÓCIOS': ('Negócios, administração e direito', '04'),
+    'CIÊNCIA DA INFORMAÇÃO': ('Computação e Tecnologias da Informação e Comunicação (TIC)', '06'),
+    'NORMAL SUPERIOR': ('Educação', '01'),
+    'COMUNICAÇÃO SOCIAL - CINEMA E AUDIOVISUAL': ('Artes e humanidades', '02'),
+    'COMUNICAÇÃO SOCIAL COM HABILITAÇÃO EM PUBLICID...': ('Ciências sociais, comunicação e informação', '03'), # Publicidade
+    'MULTIMÍDIA': ('Artes e humanidades', '02'),
+    'LETRAS - LINGUAGEM AUDIOVISUAL': ('Artes e humanidades', '02'),
+    'ESTILISMO': ('Artes e humanidades', '02'), # Design de Moda/Artes
+    'GESTÃO DE INVESTIMENTOS': ('Negócios, administração e direito', '04'),
+    'DESENVOLVIMENTO E GESTÃO DE STARTUPS': ('Negócios, administração e direito', '04'),
+    'EMPREENDEDORISMO': ('Negócios, administração e direito', '04'),
+    'COACHING': ('Serviços', '10'), # Serviços/Negócios
+    'PRODUÇÃO CERVEJEIRA': ('Engenharia, produção e construção', '07'), # Processos Industriais/Eng. Química
+    # --- CURSOS QUE JÁ EXISTIAM NO SEU MAPA, MAS COM OUTROS NOMES/VÍRGULAS/SPACING ---
+    'CIÊNCIA DA COMPUTAÇÃO': ('Computação e Tecnologias da Informação e Comunicação (TIC)', '06'), # Mesmo que CIÊNCIAS DA COMPUTAÇÃO
+    # --- NOMES AMBÍGUOS OU INCOMPLETOS JÁ LISTADOS ---
+    # (Mantendo apenas o que não estava no seu mapa anterior, que não enviei)
+    
+    # --- CURSOS COMUNS (Mantendo os que você já tinha no original como base) ---
+    'ADMINISTRAÇÃO': ('Negócios, administração e direito', '04'),
+    'EDUCAÇÃO FÍSICA': ('Saúde e bem-estar', '09'),
+    'CIÊNCIAS CONTÁBEIS': ('Negócios, administração e direito', '04'),
+    'PEDAGOGIA': ('Educação', '01'),
+    'ENGENHARIA CIVIL': ('Engenharia, produção e construção', '07'),
+    'DIREITO': ('Negócios, administração e direito', '04'),
+    'FARMÁCIA': ('Saúde e bem-estar', '09'),
+    'PSICOLOGIA': ('Ciências sociais, comunicação e informação', '03'),
+    'JORNALISMO': ('Ciências sociais, comunicação e informação', '03'),
+    'ODONTOLOGIA': ('Saúde e bem-estar', '09'),
+    'TERAPIA OCUPACIONAL': ('Saúde e bem-estar', '09'),
+    'AGRONOMIA': ('Agricultura, silvicultura, pesca e veterinária', '08'),
+    # (Adicione aqui o restante dos seus mapeamentos já feitos para garantir que eles não sumam)
+    
+    # --- NOMES QUE PRECISAM DE LIMPEZA EXTRA (Se vierem sujos) ---
+    'LOGÍSTICA': ('Negócios, administração e direito', '04'), # Exemplo de curso que precisa ser adicionado
+    'SERVIÇO SOCIAL': ('Saúde e bem-estar', '09'), # Exemplo de curso que precisa ser adicionado
+    
+    # --- OUTROS CURSOS QUE VOCÊ JÁ TINHA MAIS OTIMIZADOS ---
+    # Copie e cole o restante dos seus 100+ mapeamentos já prontos aqui!
 }
 
 # --- 3. Função de Correção (Apply) ---

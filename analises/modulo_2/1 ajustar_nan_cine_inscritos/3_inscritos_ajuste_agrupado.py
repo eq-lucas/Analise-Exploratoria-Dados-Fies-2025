@@ -246,6 +246,9 @@ mapa_correcao_manual = {
     'INTERDISCIPLINAR EM CIÊNCIA E TECNOLOGIA': ('Ciências naturais, matemática e estatística', '05'),
     # --- NOMES NÃO ENCONTRADOS NO GABARITO ---
     'GESTÃO DE ENERGIAS': ('VERIFICAR MANUALMENTE', 'XX'), 
+
+    # adicionado apos executar modulo3-> verificacao cursos nan, entao refeito todos csv do modulo 2 em diante( poucos refeitos)
+    'ENGENHARIA DE ENERGIAS': ('Engenharia, produção e construção', '07'),
 }
 
 
