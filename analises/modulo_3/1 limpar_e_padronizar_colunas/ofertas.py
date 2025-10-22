@@ -1,8 +1,19 @@
+# %%
 import pandas as pd
+import os
 
-path= '../../../planilhas/limpo/modulo_2/ajustar_nan_cine_ofertas/ofertas_agrupado_limpo_CORRIGIDO.csv'
+pd.set_option('display.max_rows', None)
+pd.set_option('display.max_columns', None)
 
-mapa_nomes_ofertas = {
+# --- 1. CAMINHOS ---
+
+# Caminho de LEITURA (o arquivo que você quer renomear)
+path_leitura_ofertas = '../../../planilhas/limpo/modulo_2/ajustar_nan_cine_ofertas/ofertas_agrupado_limpo_CORRIGIDO.csv'
+
+# Caminho de SAÍDA (onde salvar o arquivo com nomes novos)
+path_salvar_ofertas = '../../../planilhas/limpo/modulo_3/limpar_e_padronizar_colunas/ofertas_limpo.csv'
+
+mapa_nomes_curto = {
     'ano_ofertas': 'ano',
     'semestre_ofertas': 'semestre',
     'nome_mantenedora_ofertas': 'nome_mantenedora',
@@ -81,3 +92,24 @@ mapa_nomes_ofertas = {
     'CO_CINE_AREA_GERAL': 'codigo_cine_area_geral',
     'NO_CINE_AREA_GERAL': 'nome_cine_area_geral'
 }
+
+# --- 3. PROCESSAMENTO ---
+print(f"Lendo arquivo de ofertas: {path_leitura_ofertas}")
+
+df_ofertas = pd.read_csv(path_leitura_ofertas, low_memory=False) # Adicionado low_memory=False
+
+print("Renomeando colunas...")
+df_ofertas_renomeado = df_ofertas.rename(columns=mapa_nomes_curto)
+
+# Cria o diretório se ele não existir
+os.makedirs(os.path.dirname(path_salvar_ofertas), exist_ok=True)
+
+print(f"Salvando arquivo renomeado em: {path_salvar_ofertas}")
+df_ofertas_renomeado.to_csv(path_salvar_ofertas, index=False)
+
+print("\n--- Processo Concluído (Ofertas) ---")
+
+print("\nNovos nomes de colunas:")
+print(df_ofertas_renomeado.columns.to_list())
+
+# %%
