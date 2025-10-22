@@ -112,4 +112,8 @@ print("\n--- Processo Concluído (Ofertas) ---")
 print("\nNovos nomes de colunas:")
 print(df_ofertas_renomeado.columns.to_list())
 
+pd.set_option('display.max_rows', None) # Para mostrar todos os nomes
+pd.set_option('display.max_columns', None)
+
+display(df_ofertas_renomeado.head())#type: ignore
 # %%
