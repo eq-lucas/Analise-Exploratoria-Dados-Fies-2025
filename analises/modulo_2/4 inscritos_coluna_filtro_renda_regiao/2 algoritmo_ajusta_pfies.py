@@ -2,8 +2,6 @@
 # caso contrario ele eh considerado == eliminado
 
 
-
-
 # %%
 import pandas as pd
 import os

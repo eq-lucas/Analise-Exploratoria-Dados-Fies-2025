@@ -326,7 +326,7 @@ try:
         caminho_salvar = os.path.join(path_save, nome_salvar)
         
         print(f"\nSalvando arquivo corrigido em: {caminho_salvar}")
-        df_corrigido.to_csv(caminho_salvar, index=False, encoding='utf-8-sig')
+        df_corrigido.to_csv(caminho_salvar, index=False, encoding='utf-8')
         
         print("\n--- Processo de correção concluído! ---")
         

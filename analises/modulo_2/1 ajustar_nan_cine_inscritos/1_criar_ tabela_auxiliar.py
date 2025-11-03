@@ -2,6 +2,7 @@
 import pandas as pd
 import os
 
+
 # --- 1. Configuração ---
 pd.set_option('display.max_rows', None) # Para mostrar todos os nomes
 pd.set_option('display.max_columns', None)
@@ -64,7 +65,7 @@ if df_principal is not None:
 
         caminho_salvar = os.path.join(path_save, nome_salvar)
         
-        df_auxiliar.to_csv(caminho_salvar, index=False, encoding='utf-8-sig')
+        df_auxiliar.to_csv(caminho_salvar, index=False, encoding='utf-8')
 
         # 5. Mostrar o resultado
         print(f"\n--- Dataset Auxiliar Criado (sem NaNs) ---")

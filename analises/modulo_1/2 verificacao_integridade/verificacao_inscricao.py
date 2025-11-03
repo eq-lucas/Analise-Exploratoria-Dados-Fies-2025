@@ -4,6 +4,8 @@ import os
 
 path='../../../planilhas/limpo/modulo_1/inscricao/'
 
+
+
 pasta_arquivos= os.listdir(path=path)
 
 for arquivo in pasta_arquivos:
@@ -57,6 +59,6 @@ for arquivo in pasta_arquivos:
 
                     caminho_saida= os.path.join(path,arquivo)
 
-                    df_sem_linha_vazia.to_csv(caminho_saida,index=False,encoding='utf-8-sig')
+                    df_sem_linha_vazia.to_csv(caminho_saida,index=False,encoding='utf-8')
 
 # %%

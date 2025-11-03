@@ -76,7 +76,7 @@ else:
     os.makedirs(path_save, exist_ok=True) 
     caminho_salvar = os.path.join(path_save, nome_salvar)
     
-    df_auxiliar_ofertas.to_csv(caminho_salvar, index=False, encoding='utf-8-sig')
+    df_auxiliar_ofertas.to_csv(caminho_salvar, index=False, encoding='utf-8')
 
     # 5. Mostrar o resultado
     print(f"\n--- Dataset Auxiliar de OFERTAS Criado (sem NaNs) ---")

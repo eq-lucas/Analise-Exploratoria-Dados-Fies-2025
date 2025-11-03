@@ -1,7 +1,6 @@
 # %%
 import pandas as pd
 
-
 # Dicionário para guardar o conjunto (set) de colunas de cada ano
 colunas_por_ano = {}
 

@@ -151,7 +151,7 @@ for arquivo in lista_semDuplicatas:
             nome_arquivo_saida = f"{nome_base_limpo}_limpo.csv"
             caminho_saida = os.path.join(path_limpo, nome_arquivo_saida)
             
-            df_temp.to_csv(caminho_saida, index=False, encoding='utf-8-sig')
+            df_temp.to_csv(caminho_saida, index=False, encoding='utf-8')
             
             print(f"OK: '{arquivo}' -> salvo como '{nome_arquivo_saida}'")
             arquivos_processados += 1
@@ -190,6 +190,6 @@ for arquivo in lista_semDuplicatas:
 
         lista_nome_colunas.append(colunas_do_df)
 
-display(lista_nome_colunas)
+display(lista_nome_colunas)#type: ignore
 
 # %%

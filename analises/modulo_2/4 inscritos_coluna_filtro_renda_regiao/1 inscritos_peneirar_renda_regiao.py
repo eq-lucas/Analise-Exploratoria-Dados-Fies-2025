@@ -5,7 +5,6 @@
 
 
 
-
 # %%
 import numpy as np
 import pandas as pd
@@ -15,7 +14,7 @@ path_save= '../../../planilhas/limpo/modulo_2/inscritos_coluna_filtro_renda_regi
 path_inscritos= '../../../planilhas/limpo/modulo_2/ajustar_nan_cine_inscritos/inscritos_agrupado_limpo_CORRIGIDO.csv'
 
 
-df= pd.read_csv(path_inscritos,encoding='utf-8-sig')
+df= pd.read_csv(path_inscritos,encoding='utf-8')
 
 print('shape antes: ',df.shape,'\n')
 

@@ -33,7 +33,7 @@ caminho_salvar= '../../../planilhas/limpo/modulo_1/agrupado/'
 
 nome_salvar=os.path.join(caminho_salvar,'inscritos_agrupado.csv')
 
-df_concat_ordenado_ano_semestre.to_csv(nome_salvar,index=False,encoding='utf-8-sig')
+df_concat_ordenado_ano_semestre.to_csv(nome_salvar,index=False,encoding='utf-8')
 
 display(df_concat_ordenado_ano_semestre) # type: ignore
 

@@ -43,5 +43,5 @@ display(df_concat) #type: ignore
 
 caminho_salvar= '../../../planilhas/externo/df_mestre_cadastro_cursos_2016_2024.csv'
 
-df_concat.to_csv(caminho_salvar,index=0,encoding='utf-8-sig')
+df_concat.to_csv(caminho_salvar,index=0,encoding='utf-8')
 # %%

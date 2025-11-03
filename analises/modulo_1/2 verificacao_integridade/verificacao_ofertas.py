@@ -6,6 +6,7 @@ path='../../../planilhas/limpo/modulo_1/ofertas'
 
 pasta_arquivos= os.listdir(path=path)
 
+
 for arquivo in pasta_arquivos:
 
     if arquivo.endswith('.csv') and 'ofertas' in arquivo:
@@ -59,6 +60,6 @@ for arquivo in pasta_arquivos:
 
                     caminho_saida= os.path.join(path,arquivo)
 
-                    df_sem_linha_vazia.to_csv(caminho_saida,index=False,encoding='utf-8-sig')
+                    df_sem_linha_vazia.to_csv(caminho_saida,index=False,encoding='utf-8')
 
 # %%

@@ -64,7 +64,7 @@ amostra_duplo_cine_nan = df[filtro_duplo_cine_nan]
 print(f"Total de registros com {COL_CODIGO_CINE} E {COL_NOME_CURSO_CINE} NaN: {total_duplo_cine_nan}")
 
 if total_duplo_cine_nan > 0:
-    print("\nAmostra (head) dos registros. Nome do Curso Original (nome_curso) com Classificação CINE Ausente:")
+    print("\nRegistros. Nome do Curso Original (nome_curso) com Classificação CINE Ausente:")
     
     # Exibir a coluna NOME_CURSO_INSCRITO (o título original) e as colunas CINE (para provar que são NaN)
     display(amostra_duplo_cine_nan['nome_curso'])# type: ignore

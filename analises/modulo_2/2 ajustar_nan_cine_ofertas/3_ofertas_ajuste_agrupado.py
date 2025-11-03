@@ -3,6 +3,8 @@ import pandas as pd
 import os
 import numpy as np # Usado para checar NaNs
 
+
+
 # --- 1. Configuração ---
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
@@ -425,7 +427,7 @@ else:
         caminho_salvar = os.path.join(path_save_base, nome_salvar)
         
         print(f"\nSalvando arquivo corrigido em: {caminho_salvar}")
-        df_corrigido.to_csv(caminho_salvar, index=False, encoding='utf-8-sig')
+        df_corrigido.to_csv(caminho_salvar, index=False, encoding='utf-8')
         
         print("\n--- Processo de correção para OFERTAS concluído! ---")
         
