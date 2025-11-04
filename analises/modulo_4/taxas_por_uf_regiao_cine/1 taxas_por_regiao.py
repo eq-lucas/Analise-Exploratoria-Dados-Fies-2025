@@ -1,54 +1,39 @@
 # %%
-
 import pandas as pd
 
 path = '../../../planilhas/processado/modulo_3/funil_e_candidatos_unicos/funil_por_regiao.csv'
+path_salvar = '../../../planilhas/processado/modulo_4/taxas_por_uf_regiao_cine/taxas_por_regiao.csv'
 
-path_salvar= '../../../planilhas/processado/modulo_4/taxas_por_uf_regiao_cine/taxas_por_regiao.csv'
+df = pd.read_csv(path)
 
-df=pd.read_csv(path)
-
-df['taxa_inscricao'] = df['Inscritos_Geral'] / df['vagas_fies']
-# ou seja qto tem de inscritos por vaga
-
-df['taxa_aprovacao_por_inscritos'] = df['inscritos_com_nota_suficiente'] / df['Inscritos_Geral']
-df['taxa_aprovacao_por_candidato'] = df['candidatos_unicos_com_nota_suficiente'] / df['Candidatos_Unicos_Geral']
-
-df['taxa_ocupacao'] = df['vagas_ocupadas'] / df['vagas_fies']
-
-
-
-df['taxa_conversao_inscritos']=df['vagas_ocupadas'] / df['Inscritos_Geral']
-df['taxa_conversao_candidatos']=df['vagas_ocupadas'] / df['Candidatos_Unicos_Geral']
-
-#df['taxa_conversao_inscritos_com_nota']=df['vagas_ocupadas'] / df['inscritos_com_nota_suficiente']
-# NAO PODE USAR ESTE, pois nao eh necessariametne quem tem nota que esta ocupando a vaga
-# porem posso usar esta metrica para calcular se tal area geral do cine ( curso ) eh buscado por alunos mais capacitados
-df['taxa_inscritos_capacitados']=df['vagas_ocupadas'] / df['inscritos_com_nota_suficiente']
-df['taxa_candidatos_capacitados']=df['vagas_ocupadas'] / df['candidatos_unicos_com_nota_suficiente']
-
-
-
-
-
-# nao esquecer de fazer x100 para visualizar em porcentagem
-colunas=[
-'ano',
-'semestre',
-'nome_cine_area_geral',
-'regiao',
-'taxa_inscricao',
-'taxa_aprovacao_por_inscritos',
-'taxa_aprovacao_por_candidato',
-'taxa_ocupacao',
-'taxa_conversao_inscritos',
-'taxa_conversao_candidatos',
-'taxa_inscritos_capacitados',
-'taxa_candidatos_capacitados',
+# --- 1. Agregar somando os valores base (para cada regiao, área e período) ---
+colunas_base = [
+    'vagas_fies',
+    'Inscritos_Geral',
+    'inscritos_com_nota_suficiente',
+    'Candidatos_Unicos_Geral',
+    'candidatos_unicos_com_nota_suficiente',
+    'vagas_ocupadas'
 ]
 
+df_agg = (
+    df.groupby(['ano', 'semestre', 'regiao', 'nome_cine_area_geral'], as_index=False)[colunas_base]
+    .sum()
+)
 
-display(df[colunas])#type:ignore
+# --- 2. Calcular taxas CORRETAMENTE a partir dos somatórios ---
+df_agg['taxa_inscricao'] = df_agg['Inscritos_Geral'] / df_agg['vagas_fies']
+df_agg['taxa_aprovacao_por_inscritos'] = df_agg['inscritos_com_nota_suficiente'] / df_agg['Inscritos_Geral']
+df_agg['taxa_aprovacao_por_candidato'] = df_agg['candidatos_unicos_com_nota_suficiente'] / df_agg['Candidatos_Unicos_Geral']
+df_agg['taxa_ocupacao'] = df_agg['vagas_ocupadas'] / df_agg['vagas_fies']
+df_agg['taxa_conversao_inscritos'] = df_agg['vagas_ocupadas'] / df_agg['Inscritos_Geral']
+df_agg['taxa_conversao_candidatos'] = df_agg['vagas_ocupadas'] / df_agg['Candidatos_Unicos_Geral']
+df_agg['taxa_inscritos_capacitados'] = df_agg['vagas_ocupadas'] / df_agg['inscritos_com_nota_suficiente']
+df_agg['taxa_candidatos_capacitados'] = df_agg['vagas_ocupadas'] / df_agg['candidatos_unicos_com_nota_suficiente']
 
-df[colunas].to_csv(path_salvar,index=False)
+
+display(df_agg)#type: ignore
+# --- 3. Exportar ---
+df_agg.to_csv(path_salvar, index=False)
+print("✅ Taxas salvas corretamente em:", path_salvar)
 # %%
