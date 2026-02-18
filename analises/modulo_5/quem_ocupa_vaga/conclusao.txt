@@ -1,0 +1,33 @@
+. A Renda é o "Filtro Real", não a Nota
+
+A conclusão mais forte é que o mérito acadêmico (ter nota alta) é secundário à capacidade de fechar o contrato.
+
+    O Grupo de Elite (Renda Alta + Nota Alta): Estes candidatos são quase sempre pré-selecionados (o sistema os chama), mas eles têm a maior taxa de "Não Contratado".
+
+    O Motivo: O governo oferece para eles um financiamento baixo (50% a 60%). Isso exige que o aluno pague a outra metade do bolso e apresente fiadores com renda alta. Resultado: Eles são expulsos do sistema na fase do banco.
+
+2. O Sucesso da "Repescagem" para Baixa Renda
+
+Os dados mostram um fenômeno interessante: candidatos com Notas Inferiores ao Corte (Gap < 0) conseguem contratar com mais facilidade se forem de Baixa Renda (0 - 600).
+
+    A Engrenagem: Como as vagas são abandonadas pelos candidatos de nota alta (que não conseguiram pagar a coparticipação), a lista roda até chegar nos candidatos de nota menor.
+
+    O Diferencial: Quando o sistema chega no candidato de baixa renda, ele recebe 90% a 100% de financiamento. Como ele não precisa pagar quase nada e as regras de fiador são mais flexíveis para esse grupo, ele assina o contrato.
+
+    Conclusão: O sistema acaba premiando quem tem menos nota, desde que tenha renda muito baixa, porque esses são os únicos que o governo financia integralmente.
+
+3. Dois Gargalos Diferentes
+
+O arquivo prova que existem dois "muros" no FIES:
+
+    Muro da Fila (Lista de Espera): Afeta quem tem nota muito baixa. O sistema nem chega a chamar essas pessoas. É um problema de desempenho.
+
+    Muro do Banco (Não Contratado): Afeta quem tem renda maior. O sistema chama (aproveita a nota), mas o banco barra. É um problema de dinheiro.
+
+4. O Comportamento por Área (CINE)
+
+Áreas como Administração e Direito possuem filas de espera (Gráfico 2) muito maiores por causa do volume de pessoas, o que cria a sensação de que ninguém entra.
+Já em áreas como Saúde (Medicina), o gargalo de "Não Contratado" (Gráfico 3) é agressivo, pois as mensalidades são altíssimas; qualquer 10% que o governo não financie já se torna um valor proibitivo para a classe média, gerando a expulsão burocrática.
+Resumo da Tese:
+
+O FIES funciona como um funil de solvência. O governo não seleciona necessariamente "os melhores alunos", mas sim "os alunos com nota mínima que o Estado consegue financiar sem que eles precisem pagar nada (ou muito pouco) do próprio bolso". Isso explica por que o rico de nota 800 roda e o pobre de nota 500 entra.
