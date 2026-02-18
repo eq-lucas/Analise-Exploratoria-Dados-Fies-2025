@@ -1,6 +1,6 @@
 # Análise Exploratória de Dados - FIES Computação (2019-2021)
 
-Projeto de Iniciação Científica (IC) realizado na **Universidade Tecnológica Federal do Paraná (UTFPR)**, focado na análise dos microdados públicos do Fundo de Financiamento Estudantil (FIES) para a área de Computação.
+Projeto de Iniciação Científica (IC) realizado na **Universidade Tecnológica Federal do Paraná (UTFPR)**, focado na análise dos microdados públicos do Fundo de Financiamento Estudantil (FIES) para as 10 principais área do CINE em geral.
 
 ---
 
